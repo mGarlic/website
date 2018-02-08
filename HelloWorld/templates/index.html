@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/jquery-3.3.1.min.js"> </script>
+    <script src="/static/js/bootstrap.min.js"> </script>
+
+</head>
+<body>
+
+
+<form action="/index/" method="post" role="form" class="form-horizontal" >
+  <div class="form-group">
+    <label for="name">名称</label>
+    <input type="text" class="form-control" id="username" name="username" placeholder="请输入名称">
+	<input type="password" class="form-control" id="password" name="password"  placeholder="请输入密码">
+	<input type="submit" class="btn btn-default" id="submit" placeholder="提交">
+  </div>
+
+</form>
+<h1 style="...">用户展示</h1>
+<table border="1">
+  <thead>
+	<th>用户名</th>
+	<th>密码<th/>
+  </thead>
+  <tbody>
+	{% for line in data %}
+		<tr>
+			<td>{{ line.user }}</td>
+			<td>{{ line.pwd }}</td>
+		</tr>
+	{% endfor %}
+  </tbody>
+</table>
+
+<div class="form-group">
+    <label for="inputfile">文件输入</label>
+    <input type="file" id="inputfile">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox">请打勾
+    </label>
+  </div>
+
+</body>
+</html>
